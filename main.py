@@ -3,6 +3,8 @@ from  constants import *
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+from circleshape import CircleShape
+import sys
 
 def main():
     pygame.init()	
@@ -34,10 +36,16 @@ def main():
         
         updatable_group.update(dt) #updating position
 
+        for astr in asteroids_group:
+            if astr.collision(player):
+                print("Game over!")
+                sys.exit()
+
         for obj in drawable_group: #rendering
             obj.draw(screen)
 
         pygame.display.flip() 
+
 
         # limit the framerate to 60 FPS
         dt = (clock.tick(60))/1000
