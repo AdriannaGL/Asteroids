@@ -10,7 +10,11 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
     dt = 0
-    player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
+    #create groups first, then create objects
+    updatable_group = pygame.sprite.Group()
+    drawable_group = pygame.sprite.Group()
+    Player.containers = (updatable_group, drawable_group)
+    player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2) 
 
     while True:
         for event in pygame.event.get():
@@ -18,8 +22,9 @@ def main():
                 return
             
         screen.fill("black") #black screen
-        player.update(dt) #updating player position
-        player.draw(screen) #rerendering of the player
+        updatable_group.update(dt) #updating position
+        for obj in drawable_group: #rendering
+            obj.draw(screen)
         pygame.display.flip() 
 
         # limit the framerate to 60 FPS
