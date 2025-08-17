@@ -38,6 +38,7 @@ def main():
         screen.fill("black") #black screen
         
         updatable_group.update(dt) #updating position
+       
 
         for astr in asteroids_group:
             if astr.collision(player):
