@@ -16,6 +16,7 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
     dt = 0
+
     #create groups first, then create objects
     updatable_group = pygame.sprite.Group()
     drawable_group = pygame.sprite.Group()
@@ -28,7 +29,6 @@ def main():
 
     player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
     asteroid = AsteroidField() 
- 
 
     while True:
         for event in pygame.event.get():
@@ -44,6 +44,10 @@ def main():
             if astr.collision(player):
                 print("Game over!")
                 sys.exit()
+            for shot in shot_group:
+                if astr.collision(shot):
+                    shot.kill()
+                    astr.kill()
 
         for obj in drawable_group: #rendering
             obj.draw(screen)
