@@ -7,6 +7,7 @@ from circleshape import CircleShape
 import sys
 from shot import Shot
 
+
 def main():
     pygame.init()	
     print("Starting Asteroids!")
@@ -26,6 +27,7 @@ def main():
     Asteroid.containers = (asteroids_group, updatable_group, drawable_group)
     AsteroidField.containers = (updatable_group)
     Shot.containers = (shot_group, updatable_group, drawable_group)
+    
 
     player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
     asteroid = AsteroidField() 
@@ -47,7 +49,7 @@ def main():
             for shot in shot_group:
                 if astr.collision(shot):
                     shot.kill()
-                    astr.kill()
+                    astr.split()
 
         for obj in drawable_group: #rendering
             obj.draw(screen)
