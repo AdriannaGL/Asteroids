@@ -1,5 +1,5 @@
 **Asteroids Game**  
-A classic arcade-style asteroid shooting game built as part of the Boot.dev curriculum.  
+A classic arcade-style asteroid shooting game.
 
 **Features**  
 Move your ship around the screen and avoid asteroids  
@@ -28,12 +28,7 @@ Avoid colliding with asteroids
 Destroy asteroids for points  
 Survive as long as possible!  
 
-**Extending the Game**  
-Some ideas for expanding the project:  
 
-Add power-ups and new weapons  
-Implement screen-wrapping behavior  
-Add sound effects and background music  
-Improve graphics or add new enemy types  
+
 
 
