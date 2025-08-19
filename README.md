@@ -23,7 +23,6 @@ python main.py
 **Controls**
 Arrow keys: Move ship
 Spacebar: Shoot
-ESC: Quit
 
 **How to Play**
 Avoid colliding with asteroids
@@ -37,3 +36,4 @@ Add power-ups and new weapons
 Implement screen-wrapping behavior
 Add sound effects and background music
 Improve graphics or add new enemy types
+
