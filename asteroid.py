@@ -8,13 +8,12 @@ class Asteroid(CircleShape):
         super().__init__(x, y, radius)
 
     def draw(self, screen):
-        pygame.draw.circle(screen,color="white", center=self.position, radius=self.radius, width=2) #or surface = screen?
+        pygame.draw.circle(screen,color="white", center=self.position, radius=self.radius , width=2) #or surface = screen?
 
     def update(self, dt):
         self.position += self.velocity * dt
 
     def split(self):
-        print(f"Asteroid velocity before split: {self.velocity}")
         self.kill()
         if self.radius <= ASTEROID_MIN_RADIUS:
             return 
